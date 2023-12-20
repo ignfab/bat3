@@ -1,0 +1,15 @@
+[
+    {
+        "type":"readers.las"
+    },  
+    {
+      "type": "filters.assign",
+      "value": "Classification=6 WHERE Classification==67"
+    },
+    {
+      "type": "writers.las",
+      "forward": "all",
+      "extra_dims": "all",
+      "a_srs": "EPSG:2154"
+    }
+]
