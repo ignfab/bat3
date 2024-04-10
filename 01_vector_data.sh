@@ -23,7 +23,7 @@ fi
 # Option 2 : Use DL
 if $use_dl; then
     rm -f bdtopo.7z bdtopo.gpkg bati_bdtopo.gpkg
-    BDTOPO_URL="https://wxs.ign.fr/859x8t863h6a09o9o6fy4v60/telechargement/prepackage/BDTOPOV3-TOUSTHEMES-DEPARTEMENT_GPKG_PACK_233\$BDTOPO_3-3_TOUSTHEMES_GPKG_LAMB93_D024_2023-09-15/file/BDTOPO_3-3_TOUSTHEMES_GPKG_LAMB93_D024_2023-09-15.7z"
+    BDTOPO_URL="https://data.geopf.fr/telechargement/download/BDTOPO/BDTOPO_3-3_TOUSTHEMES_SHP_LAMB93_D024_2023-12-15/BDTOPO_3-3_TOUSTHEMES_SHP_LAMB93_D024_2023-12-15.7z"
     wget -O bdtopo.7z $BDTOPO_URL 
     7z -r e  bdtopo.7z */*/*.gpkg -so > bdtopo.gpkg
     ogr2ogr -spat $xmin $ymin $xmax $ymax -lco GEOMETRY_NAME=geom bati_bdtopo.gpkg bdtopo.gpkg batiment
