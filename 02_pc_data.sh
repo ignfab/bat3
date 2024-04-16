@@ -24,10 +24,11 @@ if $use_pdal; then
     rm -rf copc_index.gpkg
     python3 scripts/generate_copc_index.py --output copc_index.gpkg
 
-    # Generate PDAL pipelines files using this index
+    # Generate PDAL pipelines files using this index and the actual quadtree structure
     rm -rf pdal_pipelines pdal_pc_tiles pdal_logs
     mkdir pdal_pipelines pdal_pc_tiles pdal_logs
     python3 scripts/generate_pdal_pipelines.py \
+            --input_file actual_quadtree_structure.gpkg \
             --output_pipelines_dir pdal_pipelines \
             --output_tiles_dir pdal_pc_tiles \
             --output_log_dir pdal_logs \
@@ -80,4 +81,3 @@ if $use_dl_then_wrench; then
     python3 scripts/generate_pdal_wrench_commands.py --input_vpc_file raw_tiles.vpc
     parallel --joblog wrench_logs/parallel.log -j 1 < wrench_commands.txt
 fi
-
