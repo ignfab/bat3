@@ -15,7 +15,7 @@ if $use_wfs; then
     # Download vector data
     rm -rf bati_bdtopo.gml bati_bdtopo.gpkg
     # Download from IGNF WFS using ogr
-    ogr2ogr -lco GEOMETRY_NAME=geom -nlt MULTIPOLYGON -f GPKG bati_bdtopo.gpkg WFS:"https://data.geopf.fr/wfs?SERVICE=WFS&SRSNAME=EPSG:2154&BBOX=486000,6432000,537000,6483000,EPSG:2154&VERSION=2.0.0&REQUEST=GetFeature&TYPENAMES=BDTOPO_V3:batiment"
+    ogr2ogr -lco GEOMETRY_NAME=geom -nlt MULTIPOLYGON -f GPKG bati_bdtopo.gpkg WFS:"https://data.geopf.fr/wfs?SERVICE=WFS&SRSNAME=EPSG:2154&BBOX=$xmin,$ymin,$xmax,$ymax,EPSG:2154&VERSION=2.0.0&REQUEST=GetFeature&TYPENAMES=BDTOPO_V3:batiment"
 fi
 
 # Option 2 : Use DL
