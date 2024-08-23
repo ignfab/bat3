@@ -36,7 +36,7 @@ def parse_args():
 def create_pipeline(leaf_id, polygon, urls, args):
     content = []
     b = polygon.bounds
-    bounds = ([b[0], b[1]], [b[2], b[3]])
+    bounds = ([b[0], b[2]], [b[1], b[3]])
 
     for url in urls:
         tile = {}
