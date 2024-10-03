@@ -26,7 +26,7 @@ The data are tiled and preprocessed to merge the two building classes (class 6 a
 ### BDTOPO building footprints
 
 Two options are possible:
-* Using IGNF [Geoplateforme WFS 2.0.0](https://data.geopf.fr/wfs/ows?SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities) limited to 10⁶ features per query (but offering paging)
+* Using IGNF [Geoplateforme WFS 2.0.0](https://data.geopf.fr/wfs/ows?SERVICE=WFS&VERSION=2.0.0&REQUEST=GetCapabilities) limited to 5000 features per query (but offering paging)
 * Downloading dataset archives per [french department](https://geoservices.ign.fr/bdtopo#telechargementgpkgdep) or [french region](https://geoservices.ign.fr/bdtopo#telechargementshpreg) as GPKG files compressed with 7z
 
 In `01_vector_data.sh` the two options are available. WFS is used by default for this example.
