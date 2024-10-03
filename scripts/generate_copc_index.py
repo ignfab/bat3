@@ -26,7 +26,9 @@ def main():
     response = requests.get(args.base_url)
     soup = BeautifulSoup(response.text,features="lxml")
 
-    blocks = soup.find_all('a')
+    # LIDAR HD block identifiers should be 2 or 3 uppercase letters
+    blocks = soup.find_all('a', string=re.compile('[A-Z]{2,3}/'))
+
     with fiona.open(args.output, 'w', driver='GPKG', schema=schema, crs="EPSG:2154") as dest:
         for block in tqdm(blocks):
             response = requests.get(args.base_url+block.get("href"))
