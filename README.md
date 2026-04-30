@@ -1,3 +1,5 @@
+> This was a first try using Geoflow and IGNF datasets. The new version using `roofer` is here : https://github.com/ignfab/roofer-with-ignf-datasets. This repository is now archived.
+
 # ![Graphicloads-Battery-Battery-bar-5-full 32](https://github.com/ignfab/bat3/assets/5435148/e52b75a7-9f7d-4628-8ca4-e2f237c36910) BAT3
 
 This project is a first try at generating 3D semantized building with [geoflow-bundle](https://github.com/geoflow3d/geoflow-bundle) at scale using [IGNF](https://www.ign.fr/) datasets and services.  
